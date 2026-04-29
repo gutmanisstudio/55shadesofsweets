@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "55shadesofsweets",
+      "runtimeExecutable": "/opt/homebrew/bin/pnpm",
+      "runtimeArgs": ["dev", "--port", "3030"],
+      "port": 3030
+    }
+  ]
+}
