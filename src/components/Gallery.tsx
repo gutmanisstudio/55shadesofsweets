@@ -9,7 +9,7 @@ export default function Gallery() {
           <p className="text-xs uppercase tracking-[0.32em] text-cocoa">
             Gallery
           </p>
-          <h2 className="mt-3 font-display text-4xl leading-tight tracking-tight text-berry md:text-5xl lg:text-6xl">
+          <h2 className="mt-3 font-display text-4xl leading-tight tracking-tight text-burgundy md:text-5xl lg:text-6xl">
             A small slice of the <em className="text-rose">collection</em>.
           </h2>
         </div>

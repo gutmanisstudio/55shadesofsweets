@@ -1,24 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  /* Brand palette — warm, edible, gallery-soft */
-  --color-cream: #f6ece1;        /* page bg */
-  --color-cream-deep: #ecddc9;   /* section bg variant */
-  --color-rose: #d99a99;         /* accent */
-  --color-berry: #3a1820;        /* primary text / dark */
-  --color-cocoa: #6b4a3b;        /* secondary text */
-  --color-bone: #fffaf3;         /* surfaces */
+  /* Brand palette — burgundy + cream, sampled from logo (#4A0C09) */
+  --color-burgundy: #4a0c09;       /* primary brand surface */
+  --color-burgundy-deep: #2e0705;  /* darker variant (footer base, hover) */
+  --color-cream: #f5ebdc;          /* light surface / secondary brand */
+  --color-cream-deep: #ecdfc8;     /* subtle cream variant */
+  --color-rose: #d4a5a2;           /* small accent (italics, glyphs) */
+  --color-bone: #fffaf3;           /* on-burgundy text / pure light */
+  --color-cocoa: #6f3f33;          /* warm secondary text on cream */
 }
 
 @theme inline {
   --color-background: var(--color-cream);
-  --color-foreground: var(--color-berry);
+  --color-foreground: var(--color-burgundy);
+  --color-burgundy: var(--color-burgundy);
+  --color-burgundy-deep: var(--color-burgundy-deep);
   --color-cream: var(--color-cream);
   --color-cream-deep: var(--color-cream-deep);
   --color-rose: var(--color-rose);
-  --color-berry: var(--color-berry);
-  --color-cocoa: var(--color-cocoa);
   --color-bone: var(--color-bone);
+  --color-cocoa: var(--color-cocoa);
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
 }
@@ -26,7 +28,7 @@
 html,
 body {
   background: var(--color-cream);
-  color: var(--color-berry);
+  color: var(--color-burgundy);
 }
 
 body {
@@ -53,16 +55,7 @@ html.lenis body {
   pointer-events: none;
 }
 
-/* Subtle text selection */
 ::selection {
   background: var(--color-rose);
-  color: var(--color-bone);
-}
-
-/* Decorative typographic glyphs (for use in headings/dividers) */
-.glyph::before {
-  content: "✺";
-  display: inline-block;
-  margin-right: 0.5em;
-  color: var(--color-rose);
+  color: var(--color-burgundy);
 }

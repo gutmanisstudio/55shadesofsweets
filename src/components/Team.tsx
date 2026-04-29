@@ -14,7 +14,7 @@ export default function Team() {
               sizes="(min-width: 768px) 90vw, 100vw"
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-berry/70 via-berry/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-burgundy/70 via-burgundy/20 to-transparent" />
           </div>
           <div className="absolute inset-x-0 bottom-0 p-8 md:p-14 lg:p-20">
             <p className="text-xs uppercase tracking-[0.32em] text-bone/80">

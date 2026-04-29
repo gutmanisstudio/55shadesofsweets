@@ -10,13 +10,13 @@ export default function TopPicks() {
             <p className="text-xs uppercase tracking-[0.32em] text-cocoa">
               Top picks
             </p>
-            <h2 className="mt-3 font-display text-4xl leading-tight tracking-tight text-berry md:text-5xl lg:text-6xl">
+            <h2 className="mt-3 font-display text-4xl leading-tight tracking-tight text-burgundy md:text-5xl lg:text-6xl">
               Loved <em className="text-rose">most</em> by our guests
             </h2>
           </div>
           <a
             href="#contact"
-            className="hidden text-xs uppercase tracking-[0.22em] text-berry underline-offset-4 hover:underline md:inline-block"
+            className="hidden text-xs uppercase tracking-[0.22em] text-burgundy underline-offset-4 hover:underline md:inline-block"
           >
             See all →
           </a>
@@ -35,7 +35,7 @@ export default function TopPicks() {
                 />
               </div>
               <div className="mt-3 flex items-center justify-between">
-                <h3 className="font-display text-lg text-berry md:text-xl">
+                <h3 className="font-display text-lg text-burgundy md:text-xl">
                   {item.name}
                 </h3>
                 <span className="text-[11px] uppercase tracking-[0.22em] text-cocoa">

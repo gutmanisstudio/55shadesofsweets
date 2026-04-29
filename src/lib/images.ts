@@ -18,7 +18,7 @@ export const useReal = {
   flavours: false,
   gallery: false,
   team: false,
-  logo: false,
+  logo: true,
 };
 
 const real = <T extends string>(on: boolean, src: T) => (on ? src : PLACEHOLDER);
@@ -52,5 +52,5 @@ export const images = {
     real(useReal.gallery, "/images/gallery/08.jpg"),
   ],
   team: real(useReal.team, "/images/team/team.jpg"),
-  logo: real(useReal.logo, "/images/logo/logo.svg"),
+  logo: real(useReal.logo, "/images/logo/logo.png"),
 };
