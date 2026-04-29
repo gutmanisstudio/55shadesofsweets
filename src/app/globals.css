@@ -22,7 +22,8 @@
   --color-bone: var(--color-bone);
   --color-cocoa: var(--color-cocoa);
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  /* Display face — Jost (Century Gothic-style geometric sans, like paulinecake.ae) */
+  --font-display: var(--font-jost), "Century Gothic", "Avenir Next", ui-sans-serif, sans-serif;
 }
 
 html,
@@ -59,3 +60,20 @@ html.lenis body {
   background: var(--color-rose);
   color: var(--color-burgundy);
 }
+
+/* Horizontal marquee (auto-scrolling carousel) */
+@keyframes marquee-x {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+.marquee-track {
+  animation: marquee-x var(--marquee-duration, 40s) linear infinite;
+  will-change: transform;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Hide scrollbar on horizontal carousel containers */
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }

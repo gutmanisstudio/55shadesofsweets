@@ -1,61 +1,88 @@
 "use client";
 
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import { images } from "@/lib/images";
+import Link from "next/link";
+import OrderButton from "./OrderButton";
 
+/**
+ * Conversion-focused "How to order" block. Replaces the editorial flavour
+ * carousel — gives the buyer a clear 3-step path from cake → message → pickup.
+ */
 export default function Flavours() {
-  const [i, setI] = useState(0);
-
-  useEffect(() => {
-    const id = setInterval(
-      () => setI((v) => (v + 1) % images.flavours.length),
-      3500
-    );
-    return () => clearInterval(id);
-  }, []);
+  const steps = [
+    {
+      n: "01",
+      title: "Pick your cake",
+      body: "Browse the menu and tap a flavour. Sponge, premium, bento, macarons, cheesecake, tartlets or Dubai chocolate.",
+      cta: (
+        <Link
+          href="/cakes"
+          className="inline-block text-[11px] uppercase tracking-[0.22em] text-bone underline-offset-4 hover:underline"
+        >
+          See full menu →
+        </Link>
+      ),
+    },
+    {
+      n: "02",
+      title: "Message us",
+      body: "Send size, date and any extras on WhatsApp or Instagram. We confirm price and pickup the same day.",
+      cta: <OrderButton variant="solid-bone">Start order</OrderButton>,
+    },
+    {
+      n: "03",
+      title: "Pickup fresh",
+      body: "Made-to-order in our Riga studio. Pick up the day of your event — the cake travels in its prime.",
+      cta: (
+        <Link
+          href="/contact"
+          className="inline-block text-[11px] uppercase tracking-[0.22em] text-bone underline-offset-4 hover:underline"
+        >
+          Contact &amp; hours →
+        </Link>
+      ),
+    },
+  ];
 
   return (
-    <section id="flavours" className="bg-burgundy text-bone py-20 md:py-28">
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 md:grid-cols-12 md:items-center md:gap-16 md:px-8">
-        <div className="md:col-span-5 md:order-2">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-burgundy-deep ring-1 ring-bone/10">
-            {images.flavours.map((src, idx) => (
-              <Image
-                key={idx}
-                src={src}
-                alt=""
-                fill
-                sizes="(min-width: 768px) 40vw, 90vw"
-                className={`object-cover transition-opacity duration-700 ${
-                  idx === i ? "opacity-100" : "opacity-0"
-                }`}
-              />
-            ))}
-          </div>
-        </div>
-
-        <div className="md:col-span-7 md:order-1">
+    <section
+      id="how-to-order"
+      className="bg-burgundy text-bone py-20 md:py-28"
+    >
+      <div className="mx-auto max-w-7xl px-5 md:px-8">
+        <div className="max-w-2xl">
           <p className="text-[11px] uppercase tracking-[0.32em] text-bone/65">
-            Our flavours
+            How to order
           </p>
           <h2 className="mt-3 font-display text-4xl leading-[1.05] tracking-tight text-bone md:text-5xl lg:text-6xl">
-            Stunning to look at,
-            <br />
-            <em className="text-rose">unforgettable</em> to taste.
+            Three steps from <em className="text-rose">craving</em> to cake.
           </h2>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-bone/80 md:text-lg">
-            Every filling is thoughtfully crafted &mdash; from black-forest
-            cherry and Madagascan vanilla to white chocolate raspberry and
-            salted caramel pecan. Pick your shade.
+          <p className="mt-5 max-w-md text-sm leading-relaxed text-bone/75 md:text-base">
+            No checkout, no waiting list. Just a quick message and we&rsquo;ll
+            plan your cake together.
           </p>
-          <a
-            href="#contact"
-            className="mt-8 inline-block rounded-full border border-bone/40 px-6 py-3 text-[11px] uppercase tracking-[0.22em] text-bone transition-colors hover:bg-bone hover:text-burgundy"
-          >
-            Choose yours →
-          </a>
         </div>
+
+        <ol className="mt-12 grid gap-px overflow-hidden rounded-3xl bg-bone/10 md:mt-16 md:grid-cols-3">
+          {steps.map((s) => (
+            <li
+              key={s.n}
+              className="flex flex-col gap-6 bg-burgundy p-6 md:p-10"
+            >
+              <span className="font-display text-5xl text-rose md:text-6xl">
+                {s.n}
+              </span>
+              <div className="flex-1">
+                <h3 className="font-display text-2xl text-bone md:text-3xl">
+                  {s.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-bone/75 md:text-base">
+                  {s.body}
+                </p>
+              </div>
+              <div className="mt-auto">{s.cta}</div>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );

@@ -1,5 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import { images } from "@/lib/images";
+import { ORDER_CONTACT } from "@/lib/menu";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -10,14 +12,16 @@ export default function Footer() {
           <Image
             src={images.logo}
             alt="55 Shades of Sweets"
-            width={1269}
-            height={856}
+            width={788}
+            height={398}
             unoptimized
-            className="h-24 w-auto md:h-28"
+            className="h-32 w-auto md:h-40"
           />
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-bone/70">
-            Cake atelier &mdash; made-to-order cakes, in every shade you can
-            dream of.
+            Luxury pastries &amp; cakes &mdash; every shade tells a story.
+          </p>
+          <p className="mt-3 text-[11px] uppercase tracking-[0.32em] text-bone/55">
+            Riga · Dubai (soon)
           </p>
         </div>
 
@@ -26,10 +30,10 @@ export default function Footer() {
             Browse
           </p>
           <ul className="mt-4 space-y-2 text-sm">
-            <li><a href="#top-picks" className="hover:text-rose">Cakes</a></li>
-            <li><a href="#flavours" className="hover:text-rose">Flavours</a></li>
-            <li><a href="#gallery" className="hover:text-rose">Gallery</a></li>
-            <li><a href="#contact" className="hover:text-rose">Contact</a></li>
+            <li><Link href="/cakes" className="hover:text-rose">Cakes</Link></li>
+            <li><Link href="/how-it-works" className="hover:text-rose">How it works</Link></li>
+            <li><Link href="/about" className="hover:text-rose">About</Link></li>
+            <li><Link href="/contact" className="hover:text-rose">Contact</Link></li>
           </ul>
         </div>
 
@@ -38,14 +42,21 @@ export default function Footer() {
             Follow
           </p>
           <ul className="mt-4 space-y-2 text-sm">
-            <li><a href="https://instagram.com/" className="hover:text-rose">Instagram</a></li>
-            <li><a href="https://wa.me/00000000000" className="hover:text-rose">WhatsApp</a></li>
+            <li><a href="https://instagram.com/55shadesofsweets" className="hover:text-rose">Instagram</a></li>
+            <li>
+              <a
+                href={`https://wa.me/${ORDER_CONTACT.whatsappNumber}`}
+                className="hover:text-rose"
+              >
+                WhatsApp
+              </a>
+            </li>
           </ul>
         </div>
       </div>
       <div className="border-t border-bone/15">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-2 px-5 py-6 text-[11px] uppercase tracking-[0.28em] text-bone/55 md:flex-row md:items-center md:px-8">
-          <p>© {year} · 55 Shades of Sweets · Riga</p>
+          <p>© {year} · 55 Shades of Sweets · Riga · Dubai (soon)</p>
           <p>Baked with love</p>
         </div>
       </div>

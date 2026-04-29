@@ -1,19 +1,25 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Jost, Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import OrderFlow from "@/components/OrderFlow";
+import MobileOrderFab from "@/components/MobileOrderFab";
 
 const inter = Inter({
   variable: "--font-inter",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   display: "swap",
 });
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
-  subsets: ["latin"],
+// Display face — Jost is the closest free Google Fonts equivalent to
+// Century Gothic (the geometric sans used on paulinecake.ae).
+const jost = Jost({
+  variable: "--font-jost",
+  subsets: ["latin", "latin-ext"],
+  weight: ["300", "400", "500", "600"],
   display: "swap",
-  axes: ["SOFT", "opsz"],
 });
 
 export const metadata: Metadata = {
@@ -30,10 +36,16 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${fraunces.variable} h-full antialiased`}
+      className={`${inter.variable} ${jost.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-cream text-berry font-sans">
-        <SmoothScroll>{children}</SmoothScroll>
+        <SmoothScroll>
+          <Header />
+          {children}
+          <Footer />
+        </SmoothScroll>
+        <OrderFlow />
+        <MobileOrderFab />
       </body>
     </html>
   );

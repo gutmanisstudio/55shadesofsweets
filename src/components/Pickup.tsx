@@ -1,3 +1,7 @@
+import Link from "next/link";
+import OrderButton from "@/components/OrderButton";
+import { ORDER_CONTACT } from "@/lib/menu";
+
 export default function Pickup() {
   return (
     <section id="contact" className="bg-cream py-20 md:py-28">
@@ -10,9 +14,9 @@ export default function Pickup() {
             Come <em className="text-rose">say&nbsp;hi</em>.
           </h2>
           <p className="mt-6 max-w-md text-base leading-relaxed text-cocoa md:text-lg">
-            Orders are placed in advance and prepared fresh for pickup. Message
-            us on WhatsApp or Instagram and we&rsquo;ll plan your cake
-            together.
+            Orders &amp; collaborations are placed in advance and prepared fresh
+            for pickup. Message us on Instagram or WhatsApp and we&rsquo;ll plan
+            your cake together.
           </p>
         </div>
 
@@ -23,9 +27,9 @@ export default function Pickup() {
                 Pickup
               </dt>
               <dd className="mt-3 font-display text-xl text-burgundy md:text-2xl">
-                Address to be confirmed
-                <br />
                 Riga, Latvia
+                <br />
+                Dubai (soon)
               </dd>
             </div>
             <div>
@@ -43,7 +47,10 @@ export default function Pickup() {
                 WhatsApp
               </dt>
               <dd className="mt-3 font-display text-xl text-burgundy md:text-2xl">
-                <a href="https://wa.me/00000000000" className="hover:text-rose">
+                <a
+                  href={`https://wa.me/${ORDER_CONTACT.whatsappNumber}`}
+                  className="hover:text-rose"
+                >
                   +371 00 000 000
                 </a>
               </dd>
@@ -53,26 +60,27 @@ export default function Pickup() {
                 Instagram
               </dt>
               <dd className="mt-3 font-display text-xl text-burgundy md:text-2xl">
-                <a href="https://instagram.com/" className="hover:text-rose">
+                <a href="https://instagram.com/55shadesofsweets" className="hover:text-rose">
                   @55shadesofsweets
                 </a>
+                <span className="mt-1 block text-[11px] uppercase tracking-[0.32em] text-cocoa">
+                  Founder ·{" "}
+                  <a href="https://instagram.com/melke_elena" className="hover:text-rose">
+                    @melke_elena
+                  </a>
+                </span>
               </dd>
             </div>
           </dl>
 
           <div className="mt-10 flex flex-wrap gap-4">
-            <a
-              href="https://wa.me/00000000000"
-              className="rounded-full bg-burgundy px-7 py-3.5 text-[11px] font-medium uppercase tracking-[0.22em] text-bone transition-colors hover:bg-burgundy-deep"
-            >
-              Message on WhatsApp
-            </a>
-            <a
-              href="#"
+            <OrderButton variant="solid-burgundy">Order your cake</OrderButton>
+            <Link
+              href="/contact"
               className="rounded-full border border-burgundy/30 px-7 py-3.5 text-[11px] font-medium uppercase tracking-[0.22em] text-burgundy transition-colors hover:bg-burgundy hover:text-bone"
             >
-              Open in maps
-            </a>
+              Get in touch
+            </Link>
           </div>
         </div>
       </div>
