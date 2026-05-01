@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative isolate overflow-hidden bg-burgundy text-bone"
+      className="relative isolate overflow-hidden bg-burgundy text-bone md:min-h-[760px] lg:min-h-[820px]"
     >
       {/*
        * Mobile: video full-bleed behind everything (one composition).
@@ -16,7 +16,7 @@ export default function Hero() {
        */}
       <div
         aria-hidden
-        className="absolute inset-0 md:left-auto md:right-0 md:w-[55%] md:[mask-image:linear-gradient(to_right,transparent_0%,black_24%)]"
+        className="absolute inset-0 md:left-auto md:right-0 md:w-[44%] lg:w-[42%] md:[mask-image:linear-gradient(to_right,transparent_0%,black_22%)]"
       >
         {images.hero.video ? (
           <video
@@ -28,7 +28,7 @@ export default function Hero() {
             playsInline
             preload="metadata"
             aria-hidden
-            className="h-full w-full object-cover object-center md:object-contain md:object-right"
+            className="h-full w-full object-cover object-center"
           />
         ) : (
           <Image
@@ -36,8 +36,8 @@ export default function Hero() {
             alt=""
             fill
             priority
-            sizes="(min-width: 768px) 55vw, 100vw"
-            className="object-cover object-center md:object-contain md:object-right"
+            sizes="(min-width: 768px) 44vw, 100vw"
+            className="object-cover object-center"
             aria-hidden
           />
         )}

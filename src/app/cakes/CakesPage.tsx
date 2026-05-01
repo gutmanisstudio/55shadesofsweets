@@ -59,7 +59,7 @@ export default function CakesPage() {
         {/* Sticky category nav */}
         <nav
           aria-label="Categories"
-          className="sticky top-20 z-30 -mx-5 mt-10 overflow-x-auto border-b border-burgundy/10 bg-cream/95 px-5 py-3 backdrop-blur md:top-28 md:mx-0 md:px-0"
+          className="no-scrollbar sticky top-20 z-30 -mx-5 mt-10 overflow-x-auto border-b border-burgundy/10 bg-cream/95 px-5 py-3 backdrop-blur md:top-28 md:mx-0 md:overflow-x-visible md:px-0"
         >
           <ul className="flex gap-2">
             <li>
