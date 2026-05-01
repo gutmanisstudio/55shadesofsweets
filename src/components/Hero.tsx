@@ -16,7 +16,7 @@ export default function Hero() {
        */}
       <div
         aria-hidden
-        className="absolute inset-0 md:left-auto md:right-0 md:w-[60%] md:[mask-image:linear-gradient(to_right,transparent_0%,black_28%)]"
+        className="absolute inset-0 md:left-auto md:right-0 md:w-[55%] md:[mask-image:linear-gradient(to_right,transparent_0%,black_24%)]"
       >
         {images.hero.video ? (
           <video
@@ -28,7 +28,7 @@ export default function Hero() {
             playsInline
             preload="metadata"
             aria-hidden
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover object-center md:object-contain md:object-right"
           />
         ) : (
           <Image
@@ -36,8 +36,8 @@ export default function Hero() {
             alt=""
             fill
             priority
-            sizes="(min-width: 768px) 60vw, 100vw"
-            className="object-cover"
+            sizes="(min-width: 768px) 55vw, 100vw"
+            className="object-cover object-center md:object-contain md:object-right"
             aria-hidden
           />
         )}
